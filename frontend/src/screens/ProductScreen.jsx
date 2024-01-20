@@ -5,11 +5,8 @@ import Rating from '../components/Rating';
 import { useGetProductDetailsQuery } from '../slices/productSlice';
 
 const ProductScreen = () => {
-  const {
-    data: product,
-    isLoading,
-    error,
-  } = useGetProductDetailsQuery(productId);
+  const {id: productId} = useParams();
+  const {data: product,isLoading, error} = useGetProductDetailsQuery(productId);
 
   return (
     <>
